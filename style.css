@@ -70,8 +70,9 @@
     .pedidos-lista {
         width: 100%;
         display: flex;
+        overflow-x: scroll;
     }
-    .pedido {
+    .pedido1 {
         width: 172px;
         height: 216px;
         background-color: #FFFFFF;
@@ -81,14 +82,29 @@
         margin-right: 16px;
         box-sizing: border-box;
     }
-    .pedido > div {
-        
+    .pedido1.selecionado {
+        box-shadow: inset 0px 0px 0px 5px #32B72F;
+        border-radius: 9px;
+        position: relative;
+        z-index: 0;
     }
-    .pedido img {
+    .pedido1 img {
         width: 144px;
         height: 87px;
         object-fit: cover;
         border-radius: 4px;
         margin-bottom: 8px;
+    }
+    .pedido1 ion-icon {
+        display: none;
+    }
+    .pedido1.selecionado ion-icon {
+        font-size: 16px;
+        color: #32B72F;
+        position: absolute;
+        right: 13px;
+        bottom: 16px;
+        z-index: 1;
+        display: flex;
     }
 }
