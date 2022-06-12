@@ -41,6 +41,8 @@ function botaoPedido () {
 }
 function mostraPedido () {
     if (pedido1Clicado !== null && pedido2Clicado !== null && pedido3Clicado !== null) {
+        const confirmarPedido = document.querySelector(".confirmar-pedido.escondido");
+        confirmarPedido.classList.remove("escondido");  
         calculaPedido();
         const opcao1 = document.querySelector(".pedido1.selecionado strong");
         const prato = document.querySelector(".prato")
@@ -51,7 +53,6 @@ function mostraPedido () {
         const opcao3 = document.querySelector(".pedido3.selecionado strong");
         const sobremesa = document.querySelector(".sobremesa");
         sobremesa.innerHTML = opcao3.innerHTML;
-
     }
 
 }
@@ -59,15 +60,21 @@ function mostraPedido () {
 function calculaPedido () {
     const pedido1 = document.querySelector(".pedido1.selecionado .valor");
     let valorPedido1 = pedido1.innerHTML;
+    const preco1 = document.querySelector(".valor1");
+    preco1.innerHTML = valorPedido1;
     valor1 = Number(valorPedido1.replace(',', '.'));
     const pedido2 = document.querySelector(".pedido1.selecionado .valor");
     let valorPedido2 = pedido2.innerHTML;
+    const preco2 = document.querySelector(".valor2");
+    preco2.innerHTML = valorPedido2;
     valor2 = Number(valorPedido2.replace(',', '.'));
     const pedido3 = document.querySelector(".pedido1.selecionado .valor");
     let valorPedido3 = pedido3.innerHTML;
+    const preco3 = document.querySelector(".valor3");
+    preco3.innerHTML = valorPedido3;
     valor3 = Number(valorPedido3.replace(',', '.'));
     total = (valor1 + valor2 + valor3).toFixed(2); //armazenar como número para procediemento de cobrança, que não será implementado aqui
     valorTotal = total.replace('.', ',');
-    const confirmarPedido = document.querySelector(".confirmar-pedido.escondido");
-    confirmarPedido.classList.remove("escondido");  
+    const precoTotal = document.querySelector(".total");
+    precoTotal.innerHTML = "R$" + valorTotal;
 }
