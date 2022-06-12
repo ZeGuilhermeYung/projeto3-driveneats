@@ -39,10 +39,15 @@ function botaoPedido () {
         textoFecharPedido.innerHTML = "Fechar pedido";
     }
 }
+function travarScroll () {
+    const trava = document.querySelector("body");
+    trava.classList.add("travado");
+}
+const confirmarPedido = document.querySelector(".confirmar-pedido.escondido");
 function mostraPedido () {
     if (pedido1Clicado !== null && pedido2Clicado !== null && pedido3Clicado !== null) {
-        const confirmarPedido = document.querySelector(".confirmar-pedido.escondido");
-        confirmarPedido.classList.remove("escondido");  
+        confirmarPedido.classList.remove("escondido");
+        travarScroll();
         calculaPedido();
         const opcao1 = document.querySelector(".pedido1.selecionado strong");
         const prato = document.querySelector(".prato")
@@ -63,12 +68,12 @@ function calculaPedido () {
     const preco1 = document.querySelector(".valor1");
     preco1.innerHTML = valorPedido1;
     valor1 = Number(valorPedido1.replace(',', '.'));
-    const pedido2 = document.querySelector(".pedido1.selecionado .valor");
+    const pedido2 = document.querySelector(".pedido2.selecionado .valor");
     let valorPedido2 = pedido2.innerHTML;
     const preco2 = document.querySelector(".valor2");
     preco2.innerHTML = valorPedido2;
     valor2 = Number(valorPedido2.replace(',', '.'));
-    const pedido3 = document.querySelector(".pedido1.selecionado .valor");
+    const pedido3 = document.querySelector(".pedido3.selecionado .valor");
     let valorPedido3 = pedido3.innerHTML;
     const preco3 = document.querySelector(".valor3");
     preco3.innerHTML = valorPedido3;
@@ -77,4 +82,19 @@ function calculaPedido () {
     valorTotal = total.replace('.', ',');
     const precoTotal = document.querySelector(".total");
     precoTotal.innerHTML = "R$" + valorTotal;
+}
+function confirmaPedido () {
+    escondePedido();
+
+}
+function cancelaPedido () {
+    escondePedido();
+    destravarScroll ();
+}
+function escondePedido () {
+    confirmarPedido.classList.add("escondido");  
+}
+function destravarScroll () {
+    const destrava = document.querySelector("body.travado");
+    destrava.classList.remove("travado");
 }
