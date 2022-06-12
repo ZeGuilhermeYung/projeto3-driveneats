@@ -32,21 +32,32 @@ function botaoPedido () {
         pedidoAberto.innerHTML = "Selecione, ainda, 2 itens<br>para fechar o pedido";
     } else if (contador == 2) {
         pedidoAberto.innerHTML = "Selecione, ainda, um item<br>para fechar o pedido";
-    } else if (pedido1Clicado !== null && pedido2Clicado !== null && pedido3Clicado !== null) {
+    } else if (contador == 3) {
         const fecharPedido = document.querySelector(".rodape > div");
         fecharPedido.classList.add("fechado");
         const textoFecharPedido = document.querySelector(".rodape > div > h3");
         textoFecharPedido.innerHTML = "Fechar pedido";
     }
 }
+function fechaPedido () {
+
+}
 
 function calculaPedido () {
-    let valorPedido1 = document.querySelector(".pedido1.selecionado .valor");
-    valorPedido1 = Number(valorPedido1.replace(',', '.'));
-    let valorPedido2 = document.querySelector(".pedido1.selecionado .valor");
-    valorPedido2 = Number(valorPedido2.replace(',', '.'));
-    let valorPedido3 = document.querySelector(".pedido1.selecionado .valor");
-    valorPedido3 = Number(valorPedido3.replace(',', '.'));
-    valorTotal = (valorPedido1 + valorPedido2 + valorPedido3);
-    valorTotal = valorTotal.toFixed(2);
+    if (pedido1Clicado !== null && pedido2Clicado !== null && pedido3Clicado !== null) {
+        const pedido1 = document.querySelector(".pedido1.selecionado .valor");
+        let valorPedido1 = pedido1.innerHTML;
+        valor1 = Number(valorPedido1.replace(',', '.'));
+        const pedido2 = document.querySelector(".pedido1.selecionado .valor");
+        let valorPedido2 = pedido2.innerHTML;
+        valor2 = Number(valorPedido2.replace(',', '.'));
+        const pedido3 = document.querySelector(".pedido1.selecionado .valor");
+        let valorPedido3 = pedido3.innerHTML;
+        valor3 = Number(valorPedido3.replace(',', '.'));
+        total = (valor1 + valor2 + valor3).toFixed(2); //armazenar como número para procediemento de cobrança, que não será implementado aqui
+        valorTotal = total.replace('.', ',');
+        const confirmarPedido = document.querySelector(".confirmar-pedido.escondido");
+        confirmarPedido.classList.remove("escondido");
+    }
+    
 }
