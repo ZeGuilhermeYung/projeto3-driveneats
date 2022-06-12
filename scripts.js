@@ -39,3 +39,14 @@ function botaoPedido () {
         textoFecharPedido.innerHTML = "Fechar pedido";
     }
 }
+
+function calculaPedido () {
+    let valorPedido1 = document.querySelector(".pedido1.selecionado .valor");
+    valorPedido1 = Number(valorPedido1.replace(',', '.'));
+    let valorPedido2 = document.querySelector(".pedido1.selecionado .valor");
+    valorPedido2 = Number(valorPedido2.replace(',', '.'));
+    let valorPedido3 = document.querySelector(".pedido1.selecionado .valor");
+    valorPedido3 = Number(valorPedido3.replace(',', '.'));
+    valorTotal = (valorPedido1 + valorPedido2 + valorPedido3);
+    valorTotal = valorTotal.toFixed(2);
+}

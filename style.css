@@ -88,6 +88,9 @@
         margin-right: 16px;
         box-sizing: border-box;
     }
+    .pedidos-lista > div > div {
+        display: flex;
+    }
     .pedidos-lista > div.selecionado {
         box-shadow: inset 0px 0px 0px 5px #32B72F;
         border-radius: 9px;
