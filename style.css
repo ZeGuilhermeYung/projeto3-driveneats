@@ -70,7 +70,7 @@
     .pedidos {
         width: 100%;
         padding: 4px 3px 16px 19px;
-        margin-top: 92px;
+        margin: 92px 0;
         box-sizing: border-box;
     }
     .pedidos-lista {
@@ -112,5 +112,31 @@
         bottom: 16px;
         z-index: 1;
         display: flex;
+    }
+    .rodape {
+        width: 100%;
+        height: 92px;
+        background-color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0%;
+        right: 0;
+        left: 0;
+        z-index: 2;
+    }
+    .rodape > div {
+        width: 364px;
+        height: 61px;
+        background: #CBCBCB;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .rodape > div.fechado {
+        background-color: #32B72F;
+        font-weight: 700;
     }
 }
