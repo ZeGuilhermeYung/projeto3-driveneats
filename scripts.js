@@ -2,7 +2,6 @@ function selecionarPedido (pedido, menu) {
     let pedido1Clicado = document.querySelector(".pedido1.selecionado");
     let pedido2Clicado = document.querySelector(".pedido2.selecionado");
     let pedido3Clicado = document.querySelector(".pedido3.selecionado");
-    let contador = 0;
     if (pedido1Clicado !== null && menu == 1) {
         pedido1Clicado.classList.remove("selecionado");
     } else if (pedido2Clicado !== null && menu == 2) {
@@ -11,10 +10,14 @@ function selecionarPedido (pedido, menu) {
         pedido3Clicado.classList.remove("selecionado");  
     } 
     pedido.classList.add("selecionado");
+    botaoPedido();
+}
 
+function botaoPedido () {
     pedido1Clicado = document.querySelector(".pedido1.selecionado");
     pedido2Clicado = document.querySelector(".pedido2.selecionado");
     pedido3Clicado = document.querySelector(".pedido3.selecionado");
+    let contador = 0;
     if (pedido1Clicado !== null) {
         contador ++;
     }
