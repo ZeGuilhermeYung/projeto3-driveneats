@@ -39,11 +39,9 @@ function botaoPedido () {
         textoFecharPedido.innerHTML = "Fechar pedido";
     }
 }
-function travarScroll () {
-    const trava = document.querySelector("body");
-    trava.classList.add("travado");
-}
+
 const confirmarPedido = document.querySelector(".confirmar-pedido.escondido");
+
 function mostraPedido () {
     if (pedido1Clicado !== null && pedido2Clicado !== null && pedido3Clicado !== null) {
         confirmarPedido.classList.remove("escondido");
@@ -60,6 +58,11 @@ function mostraPedido () {
         sobremesa.innerHTML = opcao3.innerHTML;
     }
 
+}
+
+function travarScroll () {
+    const trava = document.querySelector("body");
+    trava.classList.add("travado");
 }
 
 function calculaPedido () {
@@ -83,10 +86,7 @@ function calculaPedido () {
     const precoTotal = document.querySelector(".total");
     precoTotal.innerHTML = "R$" + valorTotal;
 }
-function confirmaPedido () {
-    escondePedido();
 
-}
 function cancelaPedido () {
     escondePedido();
     destravarScroll ();
@@ -97,4 +97,10 @@ function escondePedido () {
 function destravarScroll () {
     const destrava = document.querySelector("body.travado");
     destrava.classList.remove("travado");
+}
+
+function confirmaPedido () {
+    escondePedido();
+    const dados = document.querySelector(".cadastro.escondido");
+    dados.classList.remove("escondido");
 }

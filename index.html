@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,7 +113,40 @@
             <h3 class="cancelar" onclick="cancelaPedido()"><strong>Cancelar</strong></h3>
         </div>
     </div>
-    
+    <div class="cadastro escondido">
+        <div>
+            <h2>Preencha com seus dados abaixo</h2>
+            <form>
+                <ul>
+                    <li>
+                        <label for="nomesobrenome">Nome</label>
+                        <input type="text" id="nomesobrenome"></input>
+                    </li>
+                    <li>
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco"></input>
+                        <label for="numero">Nº</label>
+                        <input type="number" id="numero"></input>
+                    </li>
+                    <li>
+                        <label for="complemento">Complemento</label>
+                        <input type="text" type="complemento"></input>
+                    </li>
+                    <li>
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro"></input>
+                    </li>
+                    <li>
+                        <label for="cep">CEP</label>
+                        <input type="number" id="cep"></input>
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade"></input>
+                    </li>
+                </ul>
+                <input type="submit" value="Confirmar dados e realizar pedido">
+            </form>
+        </div>
+    </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="scripts.js"></script>
