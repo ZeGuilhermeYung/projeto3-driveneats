@@ -39,25 +39,35 @@ function botaoPedido () {
         textoFecharPedido.innerHTML = "Fechar pedido";
     }
 }
-function fechaPedido () {
+function mostraPedido () {
+    if (pedido1Clicado !== null && pedido2Clicado !== null && pedido3Clicado !== null) {
+        calculaPedido();
+        const opcao1 = document.querySelector(".pedido1.selecionado strong");
+        const prato = document.querySelector(".prato")
+        prato.innerHTML = opcao1.innerHTML;
+        const opcao2 = document.querySelector(".pedido2.selecionado strong");
+        const bebida = document.querySelector(".bebida")
+        bebida.innerHTML = opcao2.innerHTML;
+        const opcao3 = document.querySelector(".pedido3.selecionado strong");
+        const sobremesa = document.querySelector(".sobremesa");
+        sobremesa.innerHTML = opcao3.innerHTML;
+
+    }
 
 }
 
 function calculaPedido () {
-    if (pedido1Clicado !== null && pedido2Clicado !== null && pedido3Clicado !== null) {
-        const pedido1 = document.querySelector(".pedido1.selecionado .valor");
-        let valorPedido1 = pedido1.innerHTML;
-        valor1 = Number(valorPedido1.replace(',', '.'));
-        const pedido2 = document.querySelector(".pedido1.selecionado .valor");
-        let valorPedido2 = pedido2.innerHTML;
-        valor2 = Number(valorPedido2.replace(',', '.'));
-        const pedido3 = document.querySelector(".pedido1.selecionado .valor");
-        let valorPedido3 = pedido3.innerHTML;
-        valor3 = Number(valorPedido3.replace(',', '.'));
-        total = (valor1 + valor2 + valor3).toFixed(2); //armazenar como número para procediemento de cobrança, que não será implementado aqui
-        valorTotal = total.replace('.', ',');
-        const confirmarPedido = document.querySelector(".confirmar-pedido.escondido");
-        confirmarPedido.classList.remove("escondido");
-    }
-    
+    const pedido1 = document.querySelector(".pedido1.selecionado .valor");
+    let valorPedido1 = pedido1.innerHTML;
+    valor1 = Number(valorPedido1.replace(',', '.'));
+    const pedido2 = document.querySelector(".pedido1.selecionado .valor");
+    let valorPedido2 = pedido2.innerHTML;
+    valor2 = Number(valorPedido2.replace(',', '.'));
+    const pedido3 = document.querySelector(".pedido1.selecionado .valor");
+    let valorPedido3 = pedido3.innerHTML;
+    valor3 = Number(valorPedido3.replace(',', '.'));
+    total = (valor1 + valor2 + valor3).toFixed(2); //armazenar como número para procediemento de cobrança, que não será implementado aqui
+    valorTotal = total.replace('.', ',');
+    const confirmarPedido = document.querySelector(".confirmar-pedido.escondido");
+    confirmarPedido.classList.remove("escondido");  
 }
