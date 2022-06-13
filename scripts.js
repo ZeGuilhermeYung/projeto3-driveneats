@@ -109,7 +109,12 @@ function cancelaCadastro () {
     document.querySelector(".cadastro").classList.add("escondido");
     mostraPedido();
 }
-function confirmaPedido() {
+function validarFormulario () {
+    if (document.querySelector(".formulario").checkValidity() == true) {
+        confirmaPedido();
+    }
+}
+function confirmaPedido () {
     const pratoFinal = document.querySelector(".prato").innerHTML;
     const bebidaFinal = document.querySelector(".bebida").innerHTML;
     const sobremesaFinal = document.querySelector(".sobremesa").innerHTML;
@@ -120,19 +125,34 @@ function confirmaPedido() {
     bairro = document.querySelector(".bairro").value;
     cep = document.querySelector(".cep").value;
     cidade = document.querySelector(".cidade").value;
-    const mensagem =
-    `Olá, gostaria de fazer o pedido:
+    if (complemento == "") {
+        mensagem =
+`Olá, gostaria de fazer o pedido:
 - Prato: ${pratoFinal}
 - Bebida: ${bebidaFinal}
 - Sobremesa: ${sobremesaFinal}
 Total: R$${valorTotal}
-    
+                    
+Nome: ${nomesobrenome}
+Endereço: ${endereco}, nº ${numeroEndereco}
+Bairro: ${bairro}
+CEP: ${cep}
+Cidade: ${cidade}`;
+            } else {
+                mensagem =
+`Olá, gostaria de fazer o pedido:
+- Prato: ${pratoFinal}
+- Bebida: ${bebidaFinal}
+- Sobremesa: ${sobremesaFinal}
+Total: R$${valorTotal}
+                    
 Nome: ${nomesobrenome}
 Endereço: ${endereco}, nº ${numeroEndereco}
 Complemento: ${complemento}
 Bairro: ${bairro}
 CEP: ${cep}
 Cidade: ${cidade}`;
+            }
     redirecionar(`https://wa.me/5532988890855?text=${window.encodeURIComponent(mensagem)}`);
 }
 function redirecionar(link){

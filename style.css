@@ -260,12 +260,16 @@
         align-items: center;
     }
     .cadastro ul {
-        width: 95vw;
+        width: 100vw;
         height: 300px;
+        margin-left: 50px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: center;
+        box-sizing: border-box;
+    }
+    ul p {
+        font-size: 12px;
     }
     .cadastro li {
         width: 90%;
@@ -285,6 +289,7 @@
     }
     .cadastro label {
         margin-right: 8px;
+        display: flex;
     }
     .cadastro li label:nth-child(3) {
         margin-left: 8px;
@@ -294,6 +299,9 @@
     }
     .cadastro .cep {
         width: 18vw;
+    }
+    form em {
+        color: #CF2B2B;
     }
     form .confirmar-dados {
         width: 350px;

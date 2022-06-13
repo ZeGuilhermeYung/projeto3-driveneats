@@ -54,9 +54,9 @@
                 <ion-icon name="checkmark-circle"></ion-icon>
             </div>
             <div class="pedido2" onclick="selecionarPedido(this, 2);">
-                <img src="/midia/vinho.jpeg" alt="Vinho tinto seco, daqueles bons e caros">
+                <img src="/midia/vinho.jpeg" alt="Uma taça. Melhor que o seco branco, e daqueles caros">
                 <h5><strong>Vinho Tinto Seco</strong></h5>
-                <h6>Vinho tinto seco, daqueles bons e caros</h6>
+                <h6>Uma taça. Melhor que o seco branco, e daqueles caros</h6>
                 <div><h5>R$</h5><h5 class="valor">70,00</h5></div>
                 <ion-icon name="checkmark-circle"></ion-icon>
             </div>
@@ -116,34 +116,35 @@
     <div class="cadastro escondido">
         <div>
             <h2>Preencha com seus dados abaixo</h2>
-            <form>
+            <form class="formulario">
                 <ul>
                     <li>
-                        <label for="nomesobrenome">Nome</label>
-                        <input type="text" class="nomesobrenome"></input>
+                        <label for="nomesobrenome">Nome<em>*</em></label>
+                        <input type="text" class="nomesobrenome" required>
                     </li>
                     <li>
-                        <label for="endereco">End.</label>
-                        <input type="text" class="endereco"></input>
+                        <label for="endereco">End.<em>*</em></label>
+                        <input type="text" class="endereco" required>
                     </li>
                     <li>
-                        <label for="numero">nº</label>
-                        <input type="number" class="numero-endereco"></input>
+                        <label for="numero">nº<em>*</em></label>
+                        <input type="number" class="numero-endereco" required>
                         <label for="complemento">Compl.</label>
-                        <input type="text" class="complemento"></input>
+                        <input type="text" class="complemento">
                     </li>
                     <li>
-                        <label for="bairro">Bairro</label>
-                        <input type="text" class="bairro"></input>
+                        <label for="bairro">Bairro<em>*</em></label>
+                        <input type="text" class="bairro" required>
                     </li>
                     <li>
-                        <label for="cep">CEP</label>
-                        <input type="number" class="cep"></input>
-                        <label for="cidade">Cidade</label>
-                        <input type="text" class="cidade"></input>
+                        <label for="cep">CEP<em>*</em></label>
+                        <input type="number" class="cep" required>
+                        <label for="cidade">Cidade<em>*</em></label>
+                        <input type="text" class="cidade" required>
                     </li>
+                    <p><em>*</em> Preenchimento obrigatório</p>
                 </ul>
-                <input type="submit" class="confirmar-dados" onclick="confirmaPedido()" value="Confirmar dados e realizar pedido"></input>
+                <input type="submit" class="confirmar-dados" onclick="validarFormulario()" value="Confirmar dados e realizar pedido">
                 <h3 class="cancelar-cadastro" onclick="cancelaCadastro()"><strong>Cancelar</strong></h3>
             </form>
         </div>
