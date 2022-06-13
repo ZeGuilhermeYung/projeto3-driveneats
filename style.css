@@ -12,6 +12,9 @@
     strong {
         font-weight: 700;
     }
+    em {
+        font-style: italic;
+    }
     h1 {
         font-family: 'Righteous', cursive;    
         font-size: 44px;
@@ -109,6 +112,11 @@
         object-fit: cover;
         border-radius: 4px;
         margin-bottom: 8px;
+    }
+    .pedidos-lista h6 {
+        height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .pedidos-lista ion-icon {
         display: none;
