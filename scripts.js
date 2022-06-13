@@ -99,8 +99,37 @@ function destravarScroll () {
     destrava.classList.remove("travado");
 }
 
-function confirmaPedido () {
+function cadastroPedido () {
     escondePedido();
     const dados = document.querySelector(".cadastro.escondido");
     dados.classList.remove("escondido");
 }
+function confirmaPedido() {
+    const pratoFinal = document.querySelector(".prato").innerHTML;
+    const bebidaFinal = document.querySelector(".bebida").innerHTML;
+    const sobremesaFinal = document.querySelector(".sobremesa").innerHTML;
+    nomesobrenome = document.querySelector(".nomesobrenome").value;
+    endereco = document.querySelector(".endereco").value;
+    numeroEndereco = document.querySelector(".numero-endereco").value;
+    complemento = document.querySelector(".complemento").value;
+    bairro = document.querySelector(".bairro").value;
+    cep = document.querySelector(".cep").value;
+    cidade = document.querySelector(".cidade").value;
+    const mensagem = `https://wa.me/5532988890855?text=
+    Olá, gostaria de fazer o pedido:
+    <p>- Prato: ${pratoFinal}</p>
+    - Bebida: ${bebidaFinal}
+    - Sobremesa: ${sobremesaFinal}<br>
+    Total: R$${valorTotal}
+    
+    Nome: ${nomesobrenome}
+    <br>Endereço: ${endereco}, Nº ${numeroEndereco}
+    Complemento: ${complemento}
+    Bairro: ${bairro}
+    CEP: ${cep} Cidade: ${cidade}`;
+    encodeURIComponent(mensagem);
+    redirecionar(mensagem);
+}
+function redirecionar(link){
+    window.open(link, "_blank")
+    }

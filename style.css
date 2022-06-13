@@ -222,6 +222,7 @@
         left: 0;
         top: 0;
         z-index: 3;
+        overflow: scroll;
     }
     .cadastro.escondido {
         display: none;
@@ -264,10 +265,10 @@
     .cadastro li label:nth-child(3) {
         margin-left: 8px;
     }
-    .cadastro #numero {
+    .cadastro .numero-endereco {
         width: 90px;
     }
-    .cadastro #cep {
+    .cadastro .cep {
         width: 130px;
     }
 }

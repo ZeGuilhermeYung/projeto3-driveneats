@@ -107,7 +107,7 @@
                 <li><h3 class="sobremesa"></h3><h3 class="valor3"></h3></li>
                 <li><h3><strong>TOTAL</strong></h3><h3 class="total"><strong></strong></h3></li>
             </ul>
-            <div class="confirmar" onclick="confirmaPedido()">
+            <div class="confirmar" onclick="cadastroPedido()">
                 <h3><strong>Tudo certo, pode pedir!</strong></h3>
             </div>
             <h3 class="cancelar" onclick="cancelaPedido()"><strong>Cancelar</strong></h3>
@@ -120,30 +120,30 @@
                 <ul>
                     <li>
                         <label for="nomesobrenome">Nome</label>
-                        <input type="text" id="nomesobrenome"></input>
+                        <input type="text" class="nomesobrenome"></input>
                     </li>
                     <li>
                         <label for="endereco">Endereço</label>
-                        <input type="text" id="endereco"></input>
+                        <input type="text" class="endereco"></input>
                         <label for="numero">Nº</label>
-                        <input type="number" id="numero"></input>
+                        <input type="number" class="numero-endereco"></input>
                     </li>
                     <li>
                         <label for="complemento">Complemento</label>
-                        <input type="text" type="complemento"></input>
+                        <input type="text" class="complemento"></input>
                     </li>
                     <li>
                         <label for="bairro">Bairro</label>
-                        <input type="text" id="bairro"></input>
+                        <input type="text" class="bairro"></input>
                     </li>
                     <li>
                         <label for="cep">CEP</label>
-                        <input type="number" id="cep"></input>
+                        <input type="number" class="cep"></input>
                         <label for="cidade">Cidade</label>
-                        <input type="text" id="cidade"></input>
+                        <input type="text" class="cidade"></input>
                     </li>
                 </ul>
-                <input type="submit" value="Confirmar dados e realizar pedido">
+                <input type="submit" class="confirmar-dados" onclick="confirmaPedido()" value="Confirmar dados e realizar pedido">
             </form>
         </div>
     </div>
