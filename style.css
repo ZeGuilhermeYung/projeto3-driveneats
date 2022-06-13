@@ -203,12 +203,12 @@
     .confirmar h3 {
         color: #50D074;
     }  
-    .confirmar-pedido .cancelar {
+    .confirmar-pedido .cancelar-pedido {
         font-size: 20px;
         line-height: 23px;
         margin-top: 20px;
     }
-    .cancelar:active {
+    .cancelar-pedido:active {
         text-decoration: underline;
     }
     .cadastro {
@@ -219,17 +219,21 @@
         align-items: center;
         justify-content: center;
         position: fixed;
-        left: 0;
         top: 0;
+        right: 0;
+        left: 0;
         z-index: 3;
         overflow: scroll;
     }
     .cadastro.escondido {
         display: none;
     }
+    .cadastro h2 {
+        text-align: center;
+    }
     .cadastro > div {
         width: 90vw;
-        height: 450px;
+        height: 510px;
         background-color: #E5E5E5;
         box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
         padding: 15px 10px;
@@ -238,16 +242,23 @@
         flex-direction: column;
         align-items: center;
     }
+    .cadastro form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .cadastro ul {
-        width: 90vw;
-        height: 350px;
+        width: 95vw;
+        height: 300px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        align-items: center;
     }
     .cadastro li {
         width: 90%;
         height: 50px;
+        font-weight: 500;
         display: flex;
         align-items: center;
 
@@ -255,9 +266,10 @@
     .cadastro input {
         width: 100%;
         height: 35px;
-        background-color: #CBCBCB;
-        border-radius: 5px;
-        border: 1px solid #A6A6A6;
+        background-color: #E5E5E5;
+        border-radius: 12px;
+        border: 2px solid #CBCBCB;
+        box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.15);
     }
     .cadastro label {
         margin-right: 8px;
@@ -266,9 +278,33 @@
         margin-left: 8px;
     }
     .cadastro .numero-endereco {
-        width: 90px;
+        width: 12vw;
     }
     .cadastro .cep {
-        width: 130px;
+        width: 18vw;
+    }
+    form .confirmar-dados {
+        width: 350px;
+        height: 52px;
+        background-color: #FFFFFF;
+        background-color: #CF2B2B;
+        color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+        border: 0;
+        border-radius: 100px;
+        margin-top: 20px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.018em;
+    }
+    .cancelar-cadastro {
+        color: #000000;
+        margin-top: 20px;
+    }
+    .cancelar-cadastro:active {
+        text-decoration: underline;
     }
 }

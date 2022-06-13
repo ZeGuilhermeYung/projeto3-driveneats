@@ -104,6 +104,11 @@ function cadastroPedido () {
     const dados = document.querySelector(".cadastro.escondido");
     dados.classList.remove("escondido");
 }
+
+function cancelaCadastro () {
+    document.querySelector(".cadastro").classList.add("escondido");
+    mostraPedido();
+}
 function confirmaPedido() {
     const pratoFinal = document.querySelector(".prato").innerHTML;
     const bebidaFinal = document.querySelector(".bebida").innerHTML;
@@ -123,10 +128,11 @@ function confirmaPedido() {
 Total: R$${valorTotal}
     
 Nome: ${nomesobrenome}
-Endereço: ${endereco}, Nº ${numeroEndereco}
+Endereço: ${endereco}, nº ${numeroEndereco}
 Complemento: ${complemento}
 Bairro: ${bairro}
-CEP: ${cep} Cidade: ${cidade}`;
+CEP: ${cep}
+Cidade: ${cidade}`;
     redirecionar(`https://wa.me/5532988890855?text=${window.encodeURIComponent(mensagem)}`);
 }
 function redirecionar(link){
