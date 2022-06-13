@@ -51,6 +51,9 @@
     }
     h5 strong {
         color: #333333;
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     h6 {
         font-weight: 300;
@@ -89,7 +92,7 @@
     }
     .pedidos-lista > div {
         width: 172px;
-        height: 216px;
+        height: 234px; /*Fiz 18px maior que o Figma, para poder ter 3 linhas de descrição do produto*/
         background-color: #FFFFFF;
         box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
         padding: 18px 14px;
@@ -114,7 +117,8 @@
         margin-bottom: 8px;
     }
     .pedidos-lista h6 {
-        height: 40px;
+        height: 58px; /*Fiz 18px maior que o Figma, para poder ter 3 linhas de descrição do produto*/
+        white-space: pre-line;
         overflow: hidden;
         text-overflow: ellipsis;
     }
