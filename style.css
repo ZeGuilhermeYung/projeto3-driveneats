@@ -302,6 +302,7 @@
     }
     form em {
         color: #CF2B2B;
+        font-style: normal;
     }
     form .confirmar-dados {
         width: 350px;
