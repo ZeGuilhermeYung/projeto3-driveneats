@@ -90,6 +90,9 @@
         display: flex;
         overflow-x: scroll;
     }
+    .pedidos-lista::-webkit-scrollbar {
+        display: none;
+      }
     .pedidos-lista > div {
         width: 172px;
         height: 234px; /*Fiz 18px maior que o Figma, para poder ter 3 linhas de descrição do produto*/
