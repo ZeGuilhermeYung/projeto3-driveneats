@@ -115,20 +115,19 @@ function confirmaPedido() {
     bairro = document.querySelector(".bairro").value;
     cep = document.querySelector(".cep").value;
     cidade = document.querySelector(".cidade").value;
-    const mensagem = `https://wa.me/5532988890855?text=
-    Olá, gostaria de fazer o pedido:
-    <p>- Prato: ${pratoFinal}</p>
-    - Bebida: ${bebidaFinal}
-    - Sobremesa: ${sobremesaFinal}<br>
-    Total: R$${valorTotal}
+    const mensagem =
+    `Olá, gostaria de fazer o pedido:
+- Prato: ${pratoFinal}
+- Bebida: ${bebidaFinal}
+- Sobremesa: ${sobremesaFinal}
+Total: R$${valorTotal}
     
-    Nome: ${nomesobrenome}
-    <br>Endereço: ${endereco}, Nº ${numeroEndereco}
-    Complemento: ${complemento}
-    Bairro: ${bairro}
-    CEP: ${cep} Cidade: ${cidade}`;
-    encodeURIComponent(mensagem);
-    redirecionar(mensagem);
+Nome: ${nomesobrenome}
+Endereço: ${endereco}, Nº ${numeroEndereco}
+Complemento: ${complemento}
+Bairro: ${bairro}
+CEP: ${cep} Cidade: ${cidade}`;
+    redirecionar(`https://wa.me/5532988890855?text=${window.encodeURIComponent(mensagem)}`);
 }
 function redirecionar(link){
     window.open(link, "_blank")
